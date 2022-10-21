@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: cluster-demo
+  region: "ap-southeast-2"
+  version: "1.21"
+
+availabilityZones: ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
+
+managedNodeGroups:
+- name: eks-demo-node
+  desiredCapacity: 3
+  instanceType: t3.small
+  ssh:
+    enableSsm: true
